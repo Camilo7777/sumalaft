@@ -1,0 +1,17 @@
+<div class="login-container">
+  <img src="fondo.jpg" alt="Fondo" class="login-image">
+  <div class="login-content">
+    <h2 class="login-heading">Iniciar sesión</h2>
+    <p class="welcome-message">¡Bienvenido de nuevo!</p>
+
+    <form (ngSubmit)="login()" class="login-form">
+      <input type="text" id="username" [(ngModel)]="username" name="username" required placeholder="Usuario o correo electrónico">
+
+      <input type="password" id="password" [(ngModel)]="password" name="password" required placeholder="Contraseña">
+
+      <a class="forgot-password" href="#">¿Olvidaste la contraseña?</a>
+
+      <button type="submit" class="login-button">Iniciar sesión</button>
+    </form>
+  </div>
+</div>

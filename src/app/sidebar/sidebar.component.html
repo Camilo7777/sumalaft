@@ -1,0 +1,61 @@
+<div class="sidebar">
+  <div class="sidebar-header">
+      <p (click)="navigateTo('informes')">
+        <i class="fas fa-chart-bar"></i> Sumalaft.</p>
+  </div>
+
+  <ul>
+    <li [class.active]="isSelected('Inicio')" (click)="toggleItem('Inicio')">
+      <div class="list-item" [ngClass]="{'selected': isSelected('Inicio')}">
+        <span class="icon"><i class="fas fa-user-circle"></i></span> Inicio
+      </div>
+    </li>
+
+    <li [class.active]="isSelected('Virtualizacion')" (click)="toggleItem('Virtualizacion')">
+      <div class="list-item" [ngClass]="{'selected': isSelected('Virtualizacion')}" [style.height]="calcularAlturaTotal()">
+        <span class="icon"><i class="fas fa-laptop"></i></span> Virtualizacion
+      </div>
+
+      <ul *ngIf="isSelected('Virtualizacion')">
+        <li [class.active]="isSelectedSubItem('Diagnostico')" (click)="seleccionarSubItem('Diagnostico')">Diagnostico</li>
+        <li [class.active]="isSelectedSubItem('Segmentacion')" (click)="seleccionarSubItem('Segmentacion')">Segmentacion</li>
+      </ul>
+    </li>
+
+    <li [class.active]="isSelected('Matriz de riesgos')" (click)="toggleItem('Matriz de riesgos')">
+      <div class="list-item" [ngClass]="{'selected': isSelected('Matriz de riesgos')}">
+        <span class="icon"><i class="fas fa-map-marker"></i></span> Matriz de riesgos
+      </div>
+    </li>
+
+    <li [class.active]="isSelected('Gestion de alertas')" (click)="toggleItem('Gestion de alertas')">
+      <div class="list-item" [ngClass]="{'selected': isSelected('Gestion de alertas')}">
+        <span class="icon"><i class="fas fa-user-secret"></i></span> Gestion de alertas
+      </div>
+    </li>
+
+    <li [class.active]="isSelected('Evidencia consultas')" (click)="toggleItem('Evidencia consultas')">
+      <div class="list-item" [ngClass]="{'selected': isSelected('Evidencia consultas')}">
+        <span class="icon"><i class="fas fa-compass"></i></span> Evidencia consultas
+      </div>
+    </li>
+
+    <li [class.active]="isSelected('Informes')" (click)="navigateTo('informes')">
+      <div class="list-item" [ngClass]="{'selected': isSelected('Informes')}">
+        <span class="icon"><i class="fas fa-phone"></i></span> Informes
+      </div>
+    </li>
+
+    <li [class.active]="isSelected('Capacitaciones')" (click)="toggleItem('Capacitaciones')">
+      <div class="list-item" [ngClass]="{'selected': isSelected('Capacitaciones')}">
+        <span class="icon"><i class="fas fa-comments"></i></span> Capacitaciones
+      </div>
+    </li>
+
+    <li [class.active]="isSelected('Soporte')" (click)="toggleItem('Soporte')">
+      <div class="list-item" [ngClass]="{'selected': isSelected('Soporte')}">
+        <span class="icon"><i class="fas fa-envelope"></i></span> Soporte
+      </div>
+    </li>
+  </ul>
+</div>
